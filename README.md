@@ -48,3 +48,10 @@ The deliberate trade-off: this library does **not** apply `Content-Transfer-Enco
 - The boundary value may be quoted or unquoted in the `Content-Type` string.
 - A body missing the final `--boundary--` close marker is still parsed; the last part runs to the end of the body.
 - Binary content (arbitrary bytes) is preserved unchanged.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
