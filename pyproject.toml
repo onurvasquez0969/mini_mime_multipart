@@ -1,6 +1,6 @@
 [project]
 name = "mini-mime-multipart"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python standard library parser for multipart MIME bodies into header-content dictionaries"
 requires-python = ">=3.10"
 dependencies = []
